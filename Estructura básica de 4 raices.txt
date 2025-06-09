@@ -1,0 +1,53 @@
+<!--Estructura basica del documento HTML-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Raicess|| Coffee shop</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="body">
+
+    <!--barra de inicio con datos y foto-->
+    <header class="header">
+          <img src="..//src/img/coffee-cup.png" alt="logo" class="logo">
+            <div>
+                <h2>4 RAICES COFFEE SHOP</h2>
+                <p>“Donde todo florece entre café y amistad.”</p>
+            </div>   
+    </header>
+
+     <!--Encabezado: soy lo que estas buscando-->
+    <div class="div">        
+        <h1>Representa a los cuatro fundadores: Paola, Jhon, Julián 
+            y Angie. Como raíces, cada uno aporta su energía para que 
+            el negocio florezca. Ideal para una marca con esencia familiar, 
+            cálida y auténtica.</h1>
+    </div>
+
+    <!--Barra de navegacion-->
+<nav class="navegacion">
+    <ul>
+        <!--Enlace a la misma pag del home-->
+        <li><a href="index.html" class="activo">INICIO</a></li>
+        <!--Enlace a la pagina portafolio ugc -->
+        <li><a href="cafeteria.html">CAFETERIA</a></li>
+        <!--Enlace a la pagina servicios-->
+        <li><a href="panaderiaypasteleria.html">PANADERIA Y PASTELERIA</a></li>      
+       <!--Enlace a la pagina de contacto-->
+        <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+</nav>
+
+
+/*ESPACIO PARA EL CODIGO DEL FORMULARIO*/
+
+
+    <!--PIE DE PAGINA: Todos los derechos reservados-->
+    <footer class="pie">
+        <p>&copy; 2025 4 raices . Todos los derechos reservados</p>
+    </footer>
+</body>
+</head>
+</html>
