@@ -1,0 +1,402 @@
+/*Estilo base del sitio*/
+
+/*ENCABEZADO OK*/
+.header {
+    /*color del fondo solido*/
+    background-color: rgba(231,186,145);
+    /*alineo el texto al centro*/
+    text-align: center;
+    /*quito el padding y el margin para que no se vea una franja entre un elemento y otro*/
+    padding: 10px 10px;
+    margin: 0;
+    /*color de letra*/
+    color: #5C4033;
+}
+/*Solución para separación de bloques principales - quité los dos espacios para que quede compacto OK*/
+.header div h2,
+.header div p {
+    margin: 0;
+    padding: 0;
+}
+
+/*configuraciones de la foto del logo OK*/
+.logo {
+    /*El width u el height con el mismo valor para que este quede redondo*/
+    width: 150px;
+    height: 150px;
+    /*Recorta la imagen para que encaje perfectamente en el contenedor, aunque tenga que cortar los bordes.*/
+    object-fit: cover;
+    /*redondea todo el borde hasta que sea un circulo*/
+    border-radius: 50%;
+    /*asig caracteristicas borde del logo- solid es para que sea linea continua*/
+    border: 2px solid #5c4033;
+    box-shadow: 10px 10px 10px rgba(71,52,40, 0.3);
+}
+
+/*sección de barra de presentacion fondo coffee OK*/
+.div {
+    /*fondo del encabezado, una foto*/
+    background-image: url(/src/img/BANNER-COFFEE.jpeg);
+    /*Para que la imagen no me salga toda estirada*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*Texto en paleta definida para texto*/
+    color: #3d230b;
+    /*Espaciado*/
+    padding: 30px 0px;
+    /*Centrado el texto*/
+    text-align: center;
+}
+
+/*Dando formato individual al titulo del banner OK*/
+.div h1{
+    /*Definir color de fondo con opacidad*/
+    background-color: rgba(231, 186, 145, 0.5);
+    /*Dejar en 10px para que no se mueva la dimension*/
+    padding: 10px 0px;
+    /*El texto dentro quede centrado*/
+    text-align: center;
+}
+/*REGLA PARA LA BARRA DE NAVEGACION OK*/
+.navegacion ul{
+    /*Menu horizontal*/
+    display: flex;
+    /*Justificar al centro*/
+    justify-content: center; 
+   /*remover las vinetas*/
+   list-style: none;
+   /*Remover el margen*/
+   margin: 0;
+   /*Remover el espaciado interno*/
+   padding: 0;
+   /*fondo de la barra*/
+   background-color: #6f4e37;
+}
+
+.navegacion li{
+    /*Espaciado entre opciones del menu*/
+    margin: 0 15px;
+}
+
+.navegacion a{
+    /*Color de texto en las opciones de la barra de navegacion*/
+    color: #ca9676;
+    /*Remover el subrayado*/
+    text-decoration: none;
+    /*Texto en negrilla*/
+    font-weight: bold;
+    /*Espaciado interno*/
+    padding: 15px;
+    /*Mostrando en modo en bloque*/
+    display: block;
+
+}
+/*hover es de transicion*/
+.navegacion a:hover,
+.navegacion .activo{
+    background-color: rgba(244, 165, 113, 0.2);    
+}
+
+/*SECCIONES GENERALES */
+
+.seccion{
+    /*Fondo de la seccion principal*/
+    background-image: url(src/img/BANNER-COFFEE);
+    /*Ancho maximo de la seccion*/
+    max-width: 100%;
+    /*Margen o expaciado externo*/
+    margin: 20px auto;
+    /*Margen o espaciado interno*/
+    padding: 40px 20px;
+    
+}
+
+/*Sección principal - resumen*/
+.seccion div{
+/*Definir color de fondo con opacidad*/
+    background-color: rgba(231, 186,145,0.5);
+    width: 100%;
+    /*El texto dentro quede justificado*/
+    text-align: justify;
+    /*Espaciado*/
+    padding: 30px 0px;
+    /*Color de texto*/
+    color: #3d230b;
+    /*redondear las esquinas de la seccion*/
+    border-radius: 20px;
+    /*Sombra al recuadro sutil*/
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2) ;
+}   
+
+/*DISENO DE LA TARJETA DE INICIO*/
+
+.tarjetas{
+    /*Una visualizacion en modo flexible*/
+    display:flex;
+    /*Separacion entre tarjetas*/
+    gap: 20px;
+    /*Ajuste responsivo*/
+    flex-wrap: wrap;
+    /*color de la zona*/
+    background-color: rgba(129,65,65,0.3);
+    /*Cambio de color de letra*/
+    color: #ca9676  ;
+}
+
+.tarjeta{
+    /*se muestra en una sola fila*/
+    flex: 1;
+    width: 250px;
+    padding: 20px 20px;
+    border-radius: 20px;
+    background-color: #5c4033;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    /*evita que se sobresalga el contenido*/
+    overflow: hidden;
+}
+/*Solo para que el titulo de las tarjetas esté alineado y se cambia el tamaño OK*/
+.tarjeta h5{
+    text-align: center;
+    font-size: 20px;
+}
+
+.categoria{
+    color: #473428;
+    background-color: rgba(231,186,145,0.8);
+    font-size: 25px;
+}
+
+.foto-tarjeta{
+    /* Tamaño estándar */
+    width: 450px;
+    /* Misma altura para que sea un círculo perfecto */        
+    height: 450px;  
+    /* ¡Mantiene la proporción! */     
+    object-fit: cover;  
+    /* Hace la imagen completamente redonda */ 
+    border-radius: 50%;  
+    border: 3px solid #b6886c;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+/*CUERPO DE LA PAGINA OK*/
+body{
+    /*Definición de fondo - Imagen*/
+    background-image: url(/src/img/planta-real-cafe.jpg);
+    /*Para que la imagen de fondo que cubra todo el contenedor*/
+    background-size: cover;
+    /*Centra la imagen de fondo dentro del contenedor*/
+    background-position: center;
+    /*Evita que la imagen de fondo se repita en mosaico, muestra la imagen una sola vez*/
+    background-repeat: no-repeat;
+    /*Fuente general*/
+    font-family: 'Arial Narrow', Arial, sans-serif;    
+    /*Define la altura entre líneas de texto. Ayuda a que el texto sea más legible, especialmente si hay párrafos largos.*/
+    line-height: 1.5625;
+    /*color de la fuente*/
+    color: #6f4e37;
+    /*elimino margenes y rellenos predeterminados*/
+    margin: 0;
+    padding: 0;
+    /*asegura que el tamaño total del elemento incluya el padding y border, lo que facilita el control del diseño.*/
+    box-sizing: border-box;
+
+}
+
+/*ESTILOS DE CAFETERIA Y PASTELERIA*/
+
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 90%;
+        margin: auto;
+        gap: 20px;    
+    }
+
+ 
+    .producto {
+      background-color: rgba(231, 186, 145, 0.5);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      /*linea inferior de cada producto*/
+      border-bottom: 1px solid rgba(231,186,145);
+      padding-bottom: 15px;
+      text-wrap: balance;
+      color: #473428;
+    }
+
+    .producto img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-right: 15px;
+      border-radius: 20px;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .nombre {
+      font-weight: bold;
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .descripcion {
+      color: black;
+      font-size:medium;
+    }
+
+
+/*Estilo de formulario de contacto*/
+/*Titulo  y parrafo del formulario*/
+.seccion h3,
+.seccion h4{
+    text-align: center;
+    /*Definir color de fondo con opacidad*/
+    background-color: rgba(182,136,108,0.8);
+    width: 100%;
+    /*Espaciado*/
+    padding: 30px 0px;
+    /*Color de texto*/
+    color: #3d230b;
+    /*redondear las esquinas de la seccion*/
+    border-radius: 20px;
+    /*Sombra al recuadro sutil*/
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2) ;
+}
+form{
+    /*Expandiendo el formulario al 100% segun el ancho del contenedor*/
+    width: 100%;
+    /*Limitando el ancho maximo para la legibilidad*/
+    max-width: 1000px;
+    /*Centra el formulario horizontalmente*/
+    margin: 0 auto; 
+    /*Mostrar en forma flexible*/
+    display: flex;
+    /* Se ordenan los elementos de forma vertical*/
+    flex-direction: column;
+    /**/
+    gap: 15px;
+}
+/*Estilos para etiquetas del formulario*/
+
+form label{
+    font-weight: 600;
+    color: #f8e4d7;
+    font-size: 25px;
+}
+/*ESTILO COMUN PARA TODOS LOS CAMPOS TIPO INPUT Y TEXTAREA*/
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form select,
+form textarea{    
+    padding: 10px;
+    border: 1px solid #5c4033;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100% ;
+    box-shadow: 0px 5px 5px rgba(71,52,40, 0.5);
+    /*para que todos los input tengan el mismo ancho*/
+    box-sizing: border-box;
+}
+
+/*ESITLO PARA EL BOTON DE CONTACTO hecho en clase*/
+
+form input[type="submit"]{
+        background-color: #413428;
+        color: #f8D0b7;
+        padding: 15px;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+}
+/*CAMBIO DE BACKGROUND EN EL BOTON DE CONTACTO*/
+
+form input[type="submit"]:hover{
+    background-color: #6f4e37;
+}
+
+/*Estilos del mapa*/
+.mapa-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+    iframe {
+      border: 0;
+      width: 80%;
+      max-width: 600px;
+      height: 450px;
+    }
+    .ubicacion {
+      background-color: rgba(182, 136, 108, 0.8) ;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #473428;
+    }
+
+/*Pie de pagina*/
+
+.pie{
+    /*Color de fondo del pie de pag*/
+    background-color: #473428;
+    /*Color de la letra del pie de pagina*/
+    color: #b6886c;
+    /*Alineacion al centro del contenido de pie de pagina*/
+    text-align: center;
+    /*Espaciado interno*/
+    padding: 5px;
+}
+
+
+/*DISENO RESPONSIVO (dispositivos moviles)*/
+@media (max-width: 600px) or (max-width: 1000px){
+
+    .tarjetas{
+        flex-direction: column;
+    }
+    .navegacion ul{
+        flex-direction: column;
+    }
+    .navegacion li{
+        margin: 0;
+    }
+    .perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+    /*ajustable en columnas*/
+    .contenedor-tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 90%; /* O ajustable según gusto */
+     }
+     /*para que las fotos igual queden redondas*/
+    .foto-tarjeta {
+        width: 80px;
+        height: 80px;
+    }
+    /*Responsive para las columnas del menú*/
+    .menu {
+        grid-template-columns: 1fr;
+      }
+
+
+}
+
