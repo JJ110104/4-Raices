@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Raices Coffee Shop</title>
+     <link rel="stylesheet" href="./css/common.css">
+     <link rel="stylesheet" href="./css/homepage.css">
+     <link rel="stylesheet" href="./css/preloader.css">
+     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/base-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+     <!-- PRELOADER CON IMAGEN PUBLICITARIA -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-image-container">
+                <img src="../src/img/planta-real-cafe.jpg" alt="4 Raíces Coffee Shop - ¡Bienvenido!" class="preloader-image">
+                <div class="preloader-overlay">
+                    <h2>¡Bienvenido a 4 Raíces Coffee Shop!</h2>
+                    <p>Donde todo florece entre café y amistad</p>
+                    <div class="loading-bar">
+                        <div class="loading-progress" id="loading-progress"></div>
+                    </div>
+                    <span class="loading-percentage" id="loading-percentage">0%</span>
+                </div>
+            </div>
+            <button class="skip-preloader" id="skip-preloader">
+                Saltar Introducción →
+            </button>
+        </div>
+    </div>
+    
+     <!-- CURSOR PERSONALIZADO -->
+    <div class="custom-cursor"></div>
+
+    <!-- CARRITO -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: $<span id="cartTotal">0</span></div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <button class="cart-float-btn" id="cartFloatBtn">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- CHAT -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h4>💬 Chat en Vivo</h4>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">¡Hola! Soy María, tu asistente virtual. ¿En qué puedo ayudarte hoy? ☕</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+
+    <button class="chat-float-btn" id="chatFloatBtn">💬</button>
+
+    <!-- CONTENIDO -->
+    <header class="header">
+        <img src="../src/img/coffee-cup.png" alt="logo" class="logo">
+        <div>
+            <h2>4 RAICES COFFEE SHOP</h2>
+            <p>"Donde todo florece entre café y amistad."</p>
+        </div>   
+    </header>
+
+    <div class="banner-principal">        
+        <h1>Representa a los cuatro fundadores: Paola, Jhon, Julián y Angie. Como raíces, cada uno aporta su energía para que el negocio florezca.</h1>
+    </div>
+<!--NAVEGACIÓN COMÚN-->
+    <nav class="navegacion">
+        <ul>
+            <li><a href="index.html" class="activo">INICIO</a></li>
+            <li class="dropdown">
+                <a href="cafeteria.html" class="dropdown-toggle" >
+                    CAFETERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="cafeteria.html#cafes-clasicos">Cafés Clásicos</a></li>
+                    <li><a href="cafeteria.html#cafes-especiales">Cafés Especiales</a></li>
+                    <li><a href="cafeteria.html#bebidas-gourmet">Bebidas Gourmet</a></li>
+                    <li><a href="cafeteria.html#bebidas-frescas">Bebidas Frescas</a></li>
+                    <li><a href="cafeteria.html#especiales-de-la-casa">Especiales de la casa</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="panaderia-y-pasteleria.html" class="dropdown-toggle" >
+                    PANADERIA Y PASTELERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="panaderia-y-pasteleria.html#panaderia">Panadería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#pasteleria">Pastelería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#galletas">Galletas y Dulces</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html" >CONTACTO</a></li>
+            <li><a href="pedido-online.html">DOMICILIOS</a></li>
+            <li><a href="reservas.html">RESERVAS</a></li>
+        </ul>
+    </nav>
+
+    <section class="seccion">
+        <div class="seccion-contenido">
+            <h2>Bienvenido a tu casa de café. Bienvenido al corazón del campo colombiano.</h2>
+            <p>En nuestro coffee shop, cada taza cuenta una historia que nace en las montañas de Colombia. Cultivamos nuestro propio café en fincas familiares ubicadas en tierras fértiles y soleadas, donde el aroma a cereza madura se mezcla con la brisa de la montaña.</p>
+            <p>El Café de la Casa es nuestro orgullo: un perfil exclusivo de sabor que combina notas de cacao suave, caramelo tostado y frutas rojas, tostado artesanalmente para resaltar su carácter único.</p>
+        </div>
+    </section>
+
+    <div class="tarjetas-container">
+        <div class="tarjetas">
+            <div class="tarjeta">
+                <img src="../src/img/cheesecake-frutos.jpg" alt="cheesecake-frutos" class="foto-tarjeta">
+                <h5>Postres Artesanales</h5>
+                <p>Nuestros postres artesanales están hechos con amor, paciencia y recetas que honran lo tradicional. Cada bocado es una mezcla de texturas suaves, ingredientes frescos y sabores auténticos que despiertan los sentidos.</p>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    
+                </div>
+                
+            </div>
+
+            <div class="tarjeta">
+                <img src="../src/img/taza-cafe-index.jpeg" alt="coffee-cup" class="foto-tarjeta">
+                <h5>Café de Especialidad</h5>
+                <p>En nuestra barra servimos café con técnica, precisión y alma. Ya sea en métodos clásicos como espresso o en preparaciones filtradas, cada taza es una experiencia sensorial.</p>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                </div>
+                
+            </div>
+
+            <div class="tarjeta">
+                <img src="../src/img/pan.jpg" alt="pan" class="foto-tarjeta">
+                <h5>Panadería Artesanal</h5>
+                <p>Cada pieza de pan es hecha a mano, con tiempo, cuidado y técnicas tradicionales. Pan que huele, cruje y sabe a hogar.</p>
+                <div class="rating">
+                    <span class="stars">★★★★☆</span>
+                    
+                </div>
+                
+        </div>
+    </div>
+
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h3>📧 Únete a Nuestra Familia Cafetera</h3>
+            <p>Recibe ofertas especiales, nuevos productos y noticias exclusivas de 4 Raíces</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">¡Suscribirme!</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="pie">
+        <p>&copy; 2025 4 raices . Todos los derechos reservados</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+<!-- SCRIPTS COMUNES PRIMERO -->
+    <script src="./js/common.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/preloader.js"></script>
+
+</body>
+</html>

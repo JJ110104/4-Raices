@@ -1,0 +1,200 @@
+/* ===== SISTEMA DE PRECARGA ===== */
+/*=== PRELOADER STYLES ===*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #6f4e37 0%, #3d230b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  max-width: 90%;
+}
+
+.preloader-image-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  animation: preloaderFloat 3s ease-in-out infinite;
+}
+
+.preloader-image {
+  display: block;
+  border-radius: 20px;
+  max-width: 100%;
+  height: auto;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.preloader-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.preloader-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: slideInUp 1s ease-out 0.5s both;
+}
+
+.preloader-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  animation: slideInUp 1s ease-out 0.7s both;
+}
+
+.loading-bar {
+  width: 300px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  animation: slideInUp 1s ease-out 0.9s both;
+}
+
+.loading-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #e7ba91, #ca9676);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  position: relative;
+  width: 0%;
+}
+
+.loading-progress::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+.loading-percentage {
+  font-size: 1rem;
+  font-weight: bold;
+  animation: slideInUp 1s ease-out 1.1s both;
+}
+
+.skip-preloader {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+}
+
+.skip-preloader:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*=== ANIMACIONES DEL PRELOADER ===*/
+@keyframes preloaderFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*=== RESPONSIVE PRELOADER ===*/
+@media (max-width: 768px) {
+  .preloader-overlay h2 {
+    font-size: 2rem;
+  }
+
+  .preloader-overlay p {
+    font-size: 1rem;
+  }
+
+  .loading-bar {
+    width: 250px;
+  }
+
+  .skip-preloader {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-overlay {
+    padding: 1rem;
+  }
+
+  .preloader-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .preloader-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .loading-bar {
+    width: 200px;
+  }
+}
+

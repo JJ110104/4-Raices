@@ -1,0 +1,262 @@
+<!--NUEVA PÁGINA DE RESERVAS-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - 4 Raices Coffee Shop</title>
+      <!-- Estilos comunes -->
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/reservations.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/cart-fixed.css">
+    <link rel="stylesheet" href="./css/chat.css">
+<body class="body">
+  <!-- CURSOR PERSONALIZADO -->
+    <div class="custom-cursor"></div>
+
+    <header class="header">
+        <img src="..//src/img/coffee-cup.png" alt="logo" class="logo">
+        <div>
+            <h2>4 RAICES COFFEE SHOP</h2>
+            <p>"Donde todo florece entre café y amistad."</p>
+        </div>   
+    </header>
+
+    <div class="div">        
+        <h1>Reserva tu mesa y disfruta de la mejor experiencia cafetera</h1>
+    </div>
+
+    <!--NAVEGACIÓN COMÚN-->
+    <nav class="navegacion">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="dropdown">
+                <a href="cafeteria.html" class="dropdown-toggle">
+                    CAFETERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="cafeteria.html#cafes-clasicos">Cafés Clásicos</a></li>
+                    <li><a href="cafeteria.html#cafes-especiales">Cafés Especiales</a></li>
+                    <li><a href="cafeteria.html#bebidas-gourmet">Bebidas Gourmet</a></li>
+                    <li><a href="cafeteria.html#bebidas-frescas">Bebidas Frescas</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="panaderia-y-pasteleria.html" class="dropdown-toggle">
+                    PANADERIA Y PASTELERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="panaderia-y-pasteleria.html#panaderia">Panadería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#pasteleria">Pastelería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#galletas">Galletas y Dulces</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+            <li><a href="pedido-online.html" >DOMICILIOS</a></li>
+            <li><a href="reservas.html" class="activo">RESERVAS</a></li>
+        </ul>
+    </nav>
+    <!-- SISTEMA DE RESERVAS -->
+    <section class="reservation-section">
+        <div class="reservation-container">
+            <h2>🍽️ Reserva tu Mesa</h2>
+            
+            <!-- Selector de Mesas -->
+            <div class="table-layout">
+                <h3>Selecciona tu mesa:</h3>
+                <div class="tables-grid">
+                    <div class="table-item available" data-table="1" data-capacity="2">
+                        <div class="table-visual">
+                            <i class="fas fa-circle"></i>
+                            <span>Mesa 1</span>
+                        </div>
+                        <div class="table-info">2 personas</div>
+                    </div>
+                    <div class="table-item available" data-table="2" data-capacity="4">
+                        <div class="table-visual">
+                            <i class="fas fa-square"></i>
+                            <span>Mesa 2</span>
+                        </div>
+                        <div class="table-info">4 personas</div>
+                    </div>
+                    <div class="table-item occupied" data-table="3" data-capacity="2">
+                        <div class="table-visual">
+                            <i class="fas fa-circle"></i>
+                            <span>Mesa 3</span>
+                        </div>
+                        <div class="table-info">2 personas</div>
+                    </div>
+                    <div class="table-item available" data-table="4" data-capacity="6">
+                        <div class="table-visual">
+                            <i class="fas fa-square"></i>
+                            <span>Mesa 4</span>
+                        </div>
+                        <div class="table-info">6 personas</div>
+                    </div>
+                    <div class="table-item available" data-table="5" data-capacity="2">
+                        <div class="table-visual">
+                            <i class="fas fa-circle"></i>
+                            <span>Mesa 5</span>
+                        </div>
+                        <div class="table-info">2 personas</div>
+                    </div>
+                    <div class="table-item available" data-table="6" data-capacity="4">
+                        <div class="table-visual">
+                            <i class="fas fa-square"></i>
+                            <span>Mesa 6</span>
+                        </div>
+                        <div class="table-info">4 personas</div>
+                    </div>
+                </div>
+                
+                <div class="table-legend">
+                    <div class="legend-item">
+                        <div class="legend-color available"></div>
+                        <span>Disponible</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color occupied"></div>
+                        <span>Ocupada</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color selected"></div>
+                        <span>Seleccionada</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Reserva -->
+            <form class="reservation-form" id="reservationForm">
+                <div class="form-group">
+                    <label for="reservationDate">Fecha de Reserva</label>
+                    <input type="date" id="reservationDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reservationTime">Hora de Reserva</label>
+                    <select id="reservationTime" required>
+                        <option value="">Selecciona la hora</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="partySize">Número de Personas</label>
+                    <select id="partySize" required>
+                        <option value="">Selecciona</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="5">5 personas</option>
+                        <option value="6">6 personas</option>
+                        <option value="7">7+ personas</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerName">Nombre Completo</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPhone">Teléfono</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerEmail">Correo Electrónico</label>
+                    <input type="email" id="customerEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialRequests">Solicitudes Especiales</label>
+                    <textarea id="specialRequests" rows="3" placeholder="Ocasión especial, alergias, preferencias..."></textarea>
+                </div>
+                
+                <div class="selected-table-info" id="selectedTableInfo">
+                    <!-- Información de la mesa seleccionada -->
+                </div>
+                
+                <button type="submit" class="reservation-btn">
+                    <i class="fas fa-calendar-check"></i>
+                    Confirmar Reserva
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SISTEMA DE CARRITO -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items del carrito se cargan aquí -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DEL CARRITO -->
+    <button class="cart-float-btn" id="cartFloatBtn">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- CHAT EN VIVO -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h4>💬 Chat en Vivo</h4>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">
+                ¡Hola! Soy María, tu asistente virtual. ¿En qué puedo ayudarte hoy? ☕
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DEL CHAT -->
+    <button class="chat-float-btn" id="chatFloatBtn">
+        💬
+    </button>
+
+     <!--PIE DE PÁGINA COMÚN-->
+    <footer class="pie">
+        <p>&copy; 2025 4 raices . Todos los derechos reservados</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+     <!-- SCRIPTS COMUNES PRIMERO -->
+    <script src="./js/common.js"></script>
+    <!-- SCRIPTS ESPECÍFICOS DE ESTA PÁGINA -->
+    <script src="./js/cart-fixed.js"></script>
+    <script src="./js/chat.js"></script>
+    <script src="./js/reservations.js"></script>
+</body>
+</html>

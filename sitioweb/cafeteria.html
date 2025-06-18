@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería - 4 Raices Coffee Shop</title>
+    <link rel="stylesheet" href="./css/common.css">
+     <link rel="stylesheet" href="./css/homepage.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/base-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- CARRITO -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: $<span id="cartTotal">0</span></div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <button class="cart-float-btn" id="cartFloatBtn">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+<!-- CHAT EN VIVO -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h4>💬 Chat en Vivo</h4>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">
+                ¡Hola! Soy María, tu asistente virtual. ¿En qué puedo ayudarte hoy? ☕
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+     <!-- BOTÓN FLOTANTE DEL CHAT -->
+    <button class="chat-float-btn" id="chatFloatBtn">
+        💬
+    </button>
+
+    <!-- CONTENIDO -->
+    <header class="header">
+        <img src="../src/img/coffee-cup.png" alt="logo" class="logo">
+        <div>
+            <h2>4 RAICES COFFEE SHOP</h2>
+            <p>"Donde todo florece entre café y amistad."</p>
+        </div>   
+    </header>
+
+    <div class="div">        
+        <h1>Descubre nuestros cafés de especialidad, preparados con pasión y técnica artesanal</h1>
+    </div>
+
+    <!--NAVEGACIÓN COMÚN-->
+    <nav class="navegacion">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="dropdown">
+                <a href="cafeteria.html" class="dropdown-toggle" class="activo">
+                    CAFETERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="cafeteria.html#cafes-clasicos">Cafés Clásicos</a></li>
+                    <li><a href="cafeteria.html#cafes-especiales">Cafés Especiales</a></li>
+                    <li><a href="cafeteria.html#bebidas-gourmet">Bebidas Gourmet</a></li>
+                    <li><a href="cafeteria.html#bebidas-frescas">Bebidas Frescas</a></li>
+                    <li><a href="cafeteria.html#especiales-de-la-casa">Especiales de la casa</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="panaderia-y-pasteleria.html" class="dropdown-toggle">
+                    PANADERIA Y PASTELERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="panaderia-y-pasteleria.html#panaderia">Panadería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#pasteleria">Pastelería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#galletas">Galletas y Dulces</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html" >CONTACTO</a></li>
+            <li><a href="pedido-online.html">DOMICILIOS</a></li>
+            <li><a href="reservas.html">RESERVAS</a></li>
+        </ul>
+    </nav>
+
+   <!-- CAFÉS CLÁSICOS -->
+    <section id="cafes-clasicos">
+        <div class="categoria">☕ Cafés Clásicos</div>
+        <div class="menu">
+            <div class="producto" data-category="clasico">
+                <img src="../src/img/cafe-espresso.jpeg" alt="Espresso">
+                <div class="info">
+                    <div class="nombre">Espresso</div>
+                    <div class="descripcion">Café concentrado y aromático, la base de todas nuestras preparaciones. Intenso y con cuerpo, extraído con precisión para resaltar las notas características de nuestro blend especial.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(156 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="espresso" data-price="6000" data-name="Espresso" data-image="../src/img/espresso.jpg" data-category="clasico">
+                        Agregar al Carrito - $6.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="clasico">
+                <img src="../src/img/americano.jpeg.webp" alt="Americano">
+                <div class="info">
+                    <div class="nombre">Americano</div>
+                    <div class="descripcion">Espresso suavizado con agua caliente. Perfecto para quienes prefieren un café menos intenso pero con todo el sabor y aroma de nuestros granos selectos.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(89 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="americano" data-price="7000" data-name="Americano" data-image="../src/img/americano.jpg" data-category="clasico">
+                        Agregar al Carrito - $7.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="clasico">
+                <img src="../src/img/cappuccino.jpg" alt="Cappuccino">
+                <div class="info">
+                    <div class="nombre">Cappuccino</div>
+                    <div class="descripcion">Espresso con leche vaporizada y espuma cremosa. El equilibrio perfecto entre café y lácteo, coronado con arte latte que hace de cada taza una obra única.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(203 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="cappuccino" data-price="8500" data-name="Cappuccino" data-image="../src/img/cappuccino.jpg" data-category="clasico">
+                        Agregar al Carrito - $8.500
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="clasico">
+                <img src="../src/img/latte.jpg" alt="Latte">
+                <div class="info">
+                    <div class="nombre">Latte</div>
+                    <div class="descripcion">Espresso con abundante leche vaporizada y una fina capa de espuma. Suave y cremoso, ideal para acompañar cualquier momento del día con su textura sedosa.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(178 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="latte" data-price="9000" data-name="Latte" data-image="../src/img/latte.jpg" data-category="clasico">
+                        Agregar al Carrito - $9.000
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAFÉS ESPECIALES -->
+    <section id="cafes-especiales">
+        <div class="categoria">🌟 Cafés Especiales</div>
+        <div class="menu">
+            <div class="producto" data-category="especial">
+                <img src="../src/img/mocha.jpeg" alt="Café de Mocha">
+                <div class="info">
+                    <div class="nombre">Café Mocha</div>
+                    <div class="descripcion">Delicioso espresso con leche vaporizada, sirope de chocolate y una suave corona de crema batida. Un capricho dulce para los amantes del cacao y el café.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(145 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Café de Mocha" data-price="12000" data-name="Café de Mocha" data-image="../src/img/mocha.jpeg" data-category="especial">
+                        Agregar al Carrito - $12.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="especial">
+                <img src="../src/img/caramel-macchiato.jpg" alt="Caramel Macchiato">
+                <div class="info">
+                    <div class="nombre">Caramel Macchiato</div>
+                    <div class="descripcion">Leche vaporizada combinada con caramelo y un toque de espresso. Dulce, cremoso y con el toque justo de cafeína que reconforta.
+
+</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(92 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Caramel Macchiato" data-price="14000" data-name="Caramel Macchiato" data-image="../src/img/caramel-macchiato.jpg" data-category="especial">
+                        Agregar al Carrito - $14.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="especial">
+                <img src="../src/img/affogato.jpeg.webp" alt="Affogato">
+                <div class="info">
+                    <div class="nombre">Affogato</div>
+                    <div class="descripcion">Un clásico italiano. Helado de vainilla bañado con espresso caliente. El contraste perfecto entre lo frío y lo intenso.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(67 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Affogato" data-price="16000" data-name="Affogato" data-image="../src/img/affogato.jpeg.webp" data-category="especial">
+                        Agregar al Carrito - $16.000
+                    </button>
+                </div>
+            </div>
+            <div class="producto" data-category="especial">
+                <img src="../src/img/nitroo-cold-brew.jpeg.webp" alt="Nitro Cold Brew">
+                <div class="info">
+                    <div class="nombre">Nitro Cold Brew</div>
+                    <div class="descripcion">Cold brew infusionado con nitrógeno, servido frío y con una textura suave y cremosa. Ideal para los que buscan una experiencia diferente y refrescante.
+
+
+</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(88 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Nitro Cold Brew" data-price="16000" data-name="Nitro Cold Brew" data-image="../src/img/nitroo-cold-brew.jpeg.webp" data-category="especial">
+                        Agregar al Carrito - $16.000
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEBIDAS GOURMET -->
+    <section id="bebidas-gourmet">
+        <div class="categoria">🥛 Bebidas Gourmet</div>
+        <div class="menu">
+            <div class="producto" data-category="gourmet">
+                <img src="../src/img/matcha-latte.jpeg.webp" alt="Matcha Latte">
+                <div class="info">
+                    <div class="nombre">Matcha Latte</div>
+                    <div class="descripcion">Té verde matcha batido con leche vaporizada. Una bebida suave, ligeramente herbácea y naturalmente revitalizante.
+
+</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(234 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Matcha Latte" data-price= "10500" data-name="Matcha Latte" data-image=" ../src/img/matcha-latte.jpeg.webp" data-category="gourmet">
+                        Agregar al Carrito - $10.500
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="gourmet">
+                <img src="../src/img/golden-latte.jpg" alt="Golden Latte">
+                <div class="info">
+                    <div class="nombre">Golden Latte</div>
+                    <div class="descripcion">Una mezcla cálida de cúrcuma, jengibre y leche. Perfecta para quienes buscan bienestar y sabor en una taza reconfortante y con propiedades antiinflamatorias.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(187 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Golden Latte" data-price="11000" data-name="Golden Latte" data-image="../src/img/golden-latte.jpg" data-category="gourmet">
+                        Agregar al Carrito - $11.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="gourmet">
+                <img src="../src/img/chai-latte.jpg" alt="Chai Latte">
+                <div class="info">
+                    <div class="nombre">Chai Latte</div>
+                    <div class="descripcion">Infusión especiada de canela, cardamomo y jengibre, combinada con leche vaporizada. Aromático, exótico y lleno de carácter.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(98 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="chai-latte" data-price="9500" data-name="Chai Latte" data-image="../src/img/chai-latte.jpg" data-category="gourmet">
+                        Agregar al Carrito - $9.500
+                    </button>
+                </div>
+            </div>
+             <div class="producto" data-category="gourmet">
+                <img src="../src/img/te-earl-grey.webp" alt="Té Earl Grey">
+                <div class="info">
+                    <div class="nombre">Té Earl Grey</div>
+                    <div class="descripcion">Elegante té negro aromatizado con aceite de bergamota. Un sabor cítrico y sofisticado que nunca pasa de moda.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(92 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Té Earl Grey" data-price="9500" data-name="Té Earl Grey" data-image="../src/img/te-earl-grey.webp" data-category="gourmet">
+                        Agregar al Carrito - $9.500
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEBIDAS FRÍAS -->
+    <section id="bebidas-frescas">
+        <div class="categoria">🥤 Bebidas Frescas</div>
+        <div class="menu">
+            <div class="producto" data-category="frio">
+                <img src="../src/img/limonada-genjibre-menta.jpg" alt="Limonada de jengibre y menta">
+                <div class="info">
+                    <div class="nombre">Limonada de jengibre y menta</div>
+                    <div class="descripcion">Refrescante mezcla de limón natural con un toque picante de jengibre y frescura de menta. Ideal para los días calurosos o para recargar energías.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(156 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Limonada de jengibre y menta" data-price="10000" data-name="Limonada de jengibre y menta" data-image="../src/img/limonada-genjibre-menta.jpg" data-category="frio">
+                        Agregar al Carrito - $10.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="frio">
+                <img src="../src/img/smoothie-frutos-rojos.jpg" alt="Smoothie de frutos rojos">
+                <div class="info">
+                    <div class="nombre"> Smoothie de frutos rojos</div>
+                    <div class="descripcion">Batido natural de fresas, arándanos y frambuesas con un toque de yogur. Una opción fresca, saludable y deliciosa, perfecta para cualquier momento del día.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(123 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Smoothie de frutos rojos" data-price="10000" data-name="Smoothie de frutos rojos" data-image="../src/img/smoothie-frutos-rojos.jpg" data-category="frio">
+                        Agregar al Carrito - $10.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="frio">
+                <img src="../src/img/cold-brew-naranja.jpg" alt="Cold Brew de naranja">
+                <div class="info">
+                    <div class="nombre"> Cold Brew de naranja</div>
+                    <div class="descripcion">Cold brew infusionado con cáscara de naranja y un toque de azúcar moreno. Refrescante, cítrico y energizante, con notas suaves y dulces.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(201 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Cold Brew de naranja" data-price="12500" data-name="Cold Brew de naranja" data-image="../src/img/cold-brew-naranja.jpg" data-category="frio">
+                        Agregar al Carrito - $12.500
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+     <!-- EPECIALES DE LA CASA-->
+    <section id="especiales-de-la-casa">
+        <div class="categoria">🌟 Especialidades de la casa</div>
+        <div class="menu">
+            <div class="producto" data-category="especiales">
+                <img src="../src/img/cafe-el-tesoro.jpg" alt="Café El Tesoro">
+                <div class="info">
+                    <div class="nombre">Café El Tesoro</div>
+                    <div class="descripcion">Una mezcla exclusiva de granos seleccionados, tostados artesanalmente para resaltar notas de chocolate oscuro, frutas rojas y especias. Nuestro café estrella, creado para los verdaderos conocedores.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(156 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Café El Tesoro" data-price="15000" data-name="Café El Tesoro" data-image="../src/img/cafe-el-tesoro.jpg" data-category="especiales">
+                        Agregar al Carrito - $15.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="especiales">
+                <img src="../src/img/affogato-pistacho.jpeg.webp" alt=" Affogato de café con pistacho">
+                <div class="info">
+                    <div class="nombre">  Affogato de café con pistacho</div>
+                    <div class="descripcion">Helado cremoso de pistacho bañado en espresso caliente. Un contraste perfecto entre lo suave y lo intenso, ideal como postre o capricho especial</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(123 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Affogato de café con pistacho" data-price="16000" data-name="Affogato de café con pistacho" data-image="../src/img/affogato-pistacho.jpeg.webp" data-category="especiales">
+                        Agregar al Carrito - $16.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto" data-category="especiales">
+                <img src="../src/img/latte-lavanda.jpg" alt=" Latte de lavanda">
+                <div class="info">
+                    <div class="nombre">  Latte de lavanda</div>
+                    <div class="descripcion">Latte suave con un delicado toque floral de lavanda. Perfecto para quienes buscan una experiencia calmante y aromática en cada sorbo.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(201 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product=" Latte de lavanda" data-price="12500" data-name=" Latte de lavanda" data-image="../src/img/latte-lavanda.jpg" data-category="especiales">
+                        Agregar al Carrito - $12.500
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="pie">
+        <p>&copy; 2025 4 raices . Todos los derechos reservados</p>
+        <div class="social-links">
+             <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+    <script src="./js/common.js"></script>
+    <script src="./js/main.js"></script>
+     <script src="./js/chat.js"></script>
+     <script src="./js/cart-fixed.js"></script>
+     <script src="./js/utilities.js"></script>
+</body>
+</html>
