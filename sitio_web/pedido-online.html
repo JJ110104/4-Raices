@@ -1,96 +1,274 @@
-<!--Estructura basica del documento HTML-->
+<!--PÁGINA DE PEDIDOS ONLINE ACTUALIZADA-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4 Raicess|| Coffee shop</title>
+    <title>Pedidos Online - 4 Raices Coffee Shop</title>
+    <!-- Estilos comunes -->
+    <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/cart-fixed.css">
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="/sitioweb/css/base-styles.css">
+    <link rel="stylesheet" href="css/homepage.css">
+
 </head>
 <body class="body">
 
-    <!--barra de inicio con datos y foto-->
+    <!-- CURSOR PERSONALIZADO -->
+    <div class="custom-cursor"></div>
+
+    <!-- SISTEMA DE CARRITO -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items del carrito se cargan aquí -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DEL CARRITO -->
+    <button class="cart-float-btn" id="cartFloatBtn">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- CHAT EN VIVO -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h4>💬 Chat en Vivo</h4>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">
+                ¡Hola! Soy María, tu asistente virtual. ¿En qué puedo ayudarte hoy? ☕
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DEL CHAT -->
+    <button class="chat-float-btn" id="chatFloatBtn">
+        💬
+    </button>
+
+    <!--ENCABEZADO COMÚN-->
     <header class="header">
           <img src="..//src/img/coffee-cup.png" alt="logo" class="logo">
             <div>
                 <h2>4 RAICES COFFEE SHOP</h2>
-                <p>“Donde todo florece entre café y amistad.”</p>
+                <p>"Donde todo florece entre café y amistad."</p>
             </div>   
     </header>
 
-     <!--Encabezado: soy lo que estas buscando-->
+    <!--BANNER-->
     <div class="div">        
-        <h1>Representa a los cuatro fundadores: Paola, Jhon, Julián 
-            y Angie. Como raíces, cada uno aporta su energía para que 
-            el negocio florezca. Ideal para una marca con esencia familiar, 
-            cálida y auténtica.</h1>
+        <h1>Haz tu pedido online y recibe nuestros productos frescos en la comodidad de tu hogar</h1>
     </div>
 
-    <!--Barra de navegacion-->
-<nav class="navegacion">
-    <ul>
-        <!--Enlace a la misma pag del home-->
-        <li><a href="index.html">INICIO</a></li>
-        <!--Enlace a la pagina portafolio ugc -->
-        <li><a href="cafeteria.html">CAFETERIA</a></li>
-        <!--Enlace a la pagina servicios-->
-        <li><a href="panaderiaypasteleria.html">PANADERIA Y PASTELERIA</a></li>      
-       <!--Enlace a la pagina de contacto-->
-        <li><a href="contacto.html">CONTACTO</a></li>
-        <!--Enlace a la pagina de contacto-->
-        <li><a href="pedido-online.html" class="activo">DOMICILIOS</a></li>
-    </ul>
-</nav>
+    <!--NAVEGACIÓN COMÚN-->
+    <nav class="navegacion">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="dropdown">
+                <a href="cafeteria.html" class="dropdown-toggle">
+                    CAFETERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="cafeteria.html#cafes-clasicos">Cafés Clásicos</a></li>
+                    <li><a href="cafeteria.html#cafes-especiales">Cafés Especiales</a></li>
+                    <li><a href="cafeteria.html#bebidas-gourmet">Bebidas Gourmet</a></li>
+                    <li><a href="cafeteria.html#bebidas-frescas">Bebidas Frescas</a></li>
+                    <li><a href="cafeteria.html#especiales-de-la-casa">Especiales de la casa</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="panaderia-y-pasteleria.html" class="dropdown-toggle">
+                    PANADERIA Y PASTELERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="panaderia-y-pasteleria.html#panaderia">Panadería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#pasteleria">Pastelería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#galletas">Galletas y Dulces</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+            <li><a href="pedido-online.html" class="activo">DOMICILIOS</a></li>
+            <li><a href="reservas.html" >RESERVAS</a></li>
+        </ul>
+    </nav>
 
-<section class="seccion">
-  <form action="/enviar-pedido" method="post">
-    <h3>AHORA PUEDES HACER TU PEDIDO EN LINEA</h3>
+    <!-- CALCULADORA DE DOMICILIOS -->
+    <section class="delivery-calculator">
+        <h3>🚚 Calculadora de Domicilios</h3>
+        <div class="calculator-container">
+            <input type="text" id="deliveryAddress" placeholder="Ingresa tu dirección completa">
+            <button id="calculateDelivery">Calcular Costo de Envío</button>
+            <div class="delivery-result" id="deliveryResult">
+                <!-- Resultado se muestra aquí -->
+            </div>
+        </div>
+    </section>
 
-    <label for="nombre">Nombre completo</label> 
-    <input type="text" id="nombre" name="nombre" required>
+    <!-- FORMULARIO DE PEDIDO -->
+    <!--INTENTO MEJORA DEL FORM-->
+<form action="procesar-pedido-php" method="POST" id="orderForm">
+    <section class="seccion">
+        <div>
+            <h3>🛍️ Realiza tu Pedido</h3>
+            
+                <h4>Información Personal</h4>
+                
+                <label for="customerName">Nombre Completo *</label>
+                <input type="text" id="customerName" name="customerName" required>
+                
+                <label for="customerPhone">Teléfono *</label>
+                <input type="tel" id="customerPhone" name="customerPhone" required>
+                
+                <label for="customerEmail">Correo Electrónico</label>
+                <input type="email" id="customerEmail" name="customerEmail">
+                
+                <h4>Información de Entrega</h4>
+                
+                <label for="deliveryAddress">Dirección Completa *</label>
+                <input type="text" id="deliveryAddressForm" name="deliveryAddress" required placeholder="Calle, carrera, número, barrio">
+                
+                <label for="deliveryInstructions">Instrucciones de Entrega</label>
+                <textarea id="deliveryInstructions" name="deliveryInstructions" rows="3" placeholder="Punto de referencia, apartamento, piso, etc."></textarea>
+                
+                <label for="deliveryTime">Hora Preferida de Entrega</label>
+                <select id="deliveryTime" name="deliveryTime">
+                    <option value="">Lo antes posible</option>
+                    <option value="morning">Mañana (8:00 AM - 12:00 PM)</option>
+                    <option value="afternoon">Tarde (12:00 PM - 6:00 PM)</option>
+                    <option value="evening">Noche (6:00 PM - 9:00 PM)</option>
+                </select>
+                
+                <h4>Tu Pedido</h4>
+                
+                <div class="order-links">
+                    <p>Selecciona los productos que deseas:</p>
+                    <a href="cafeteria.html" class="order-link">
+                        <i class="fas fa-coffee"></i>
+                        Ver Cafetería
+                    </a>
+                    <a href="panaderia-y-pasteleria.html" class="order-link">
+                        <i class="fas fa-birthday-cake"></i>
+                        Ver Panadería y Pastelería
+                    </a>
+                </div>
+                
+                <label for="orderDetails">Detalles del Pedido *</label>
+                <textarea id="orderDetails" name="orderDetails" rows="5" required placeholder="Describe tu pedido: productos, cantidades, especificaciones especiales..."></textarea>
+                
+                <h4>Método de Pago</h4>
+                
+                <label for="paymentMethod">Forma de Pago *</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="">Selecciona método de pago</option>
+                    <option value="cash">Efectivo</option>
+                    <option value="card">Tarjeta de Crédito/Débito</option>
+                    <option value="transfer">Transferencia Bancaria</option>
+                    <option value="nequi">Nequi</option>
+                    <option value="daviplata">Daviplata</option>
+                </select>
+                
+                <label for="orderNotes">Notas Adicionales</label>
+                <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Alergias, preferencias especiales, ocasión especial..."></textarea>
+                
+                <input type="submit" value="Realizar Pedido">
+            </form>
+        </div>
+    </section>
+    <!--CIERRO EL FORM DE PRUEBA -->
+    </form>
 
-    <label for="email">Correo electrónico</label>
-    <input type="email" id="email" name="email" required>
+    <!-- INFORMACIÓN DE DOMICILIOS -->
+    <section class="seccion">
+            <h3>📋 Información de Domicilios</h3>
+            <div class="delivery-info">
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                     <h4>Horarios de Domicilio</h4>
+                        <p>Lunes a Domingo: 8:00 AM - 8:00 PM</p>                    
+                </div>                
+                <div class="info-item">
+                    <i class="fas fa-map-marked-alt"></i>                       
+                        <h4>Cobertura</h4>
+                        <p>Bucaramanga y área metropolitana<br>Radio de 15 km desde nuestro local</p>                    
+                </div>                
+                <div class="info-item">
+                    <i class="fas fa-shipping-fast"></i>                    
+                        <h4>Tiempo de Entrega</h4>
+                        <p>30-45 minutos promedio<br>Dependiendo de la ubicación</p>                    
+                </div>                
+                <div class="info-item">
+                    <i class="fas fa-dollar-sign"></i>                    
+                        <h4>Costo de Envío</h4>
+                        <p>Desde $3.000<br>Gratis en pedidos superiores a $50.000</p>                    
+                </div>
+            </div>      
+    </section>
+    
 
-    <label for="telefono">Teléfono</label>
-    <input type="tel" id="telefono" name="telefono" required>
+    <!-- SISTEMA DE CUPONES -->
+    <section class="coupon-section">
+        <h3>🎟️ ¿Tienes un cupón de descuento?</h3>
+        <div class="coupon-container">
+            <input type="text" id="couponCode" placeholder="Ingresa tu código de cupón">
+            <button id="applyCoupon">Aplicar Cupón</button>
+            <div class="coupon-result" id="couponResult">
+                <!-- Resultado del cupón -->
+            </div>
+        </div>
+        
+        <div class="available-coupons">
+            <h4>Cupones Disponibles:</h4>
+            <div class="coupon-item">
+                <strong>PRIMERA10</strong> - 10% de descuento en tu primer pedido
+            </div>
+            <div class="coupon-item">
+                <strong>CAFE20</strong> - 20% de descuento en cafés especiales
+            </div>
+            <div class="coupon-item">
+                <strong>DULCE15</strong> - 15% de descuento en postres
+            </div>
+        </div>
+    </section>
 
-    <label for="direccion">Dirección de entrega</label>
-    <textarea id="direccion" name="direccion" rows="2" required></textarea>
-
-    <label for="producto">Producto</label>
-    <select id="producto" name="producto" required>
-      <option value="">Seleccione...</option>
-      <option value="producto1">Baguette artesanal</option>
-      <option value="producto2">Pan de masa madre</option>
-      <option value="producto3">Pan de chocolate belga</option>
-    </select>
-
-    <label for="cantidad">Cantidad</label>
-    <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
-
-    <label for="metodo_pago">Método de pago</label>
-    <select id="metodo_pago" name="metodo_pago" required>
-      <option value="">Seleccione...</option>
-      <option value="tarjeta">Tarjeta de crédito</option>
-      <option value="transferencia">Transferencia bancaria</option>
-      <option value="pse">Plataforma de pago PSE</option>
-      <option value="nequi">Nequi</option>
-      <option value="contraentrega">contraentrega</option>
-    </select>       
-
-    <label for="comentarios">Comentarios adicionales</label>
-    <textarea id="comentarios" name="comentarios" rows="3"></textarea>
-
-    <input type="submit" value="Enviar">
-  </form>
-</section>  
-
-
-
-    <!--PIE DE PAGINA: Todos los derechos reservados-->
+    <!--PIE DE PÁGINA COMÚN-->
     <footer class="pie">
         <p>&copy; 2025 4 raices . Todos los derechos reservados</p>
+        <div class="social-links">
+           <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
+
+    <!-- SCRIPTS COMUNES PRIMERO -->
+    <script src="./js/common.js"></script>
+    <!-- SCRIPTS ESPECÍFICOS DE ESTA PÁGINA -->
+    <script src="./js/cart-fixed.js"></script>
+    <script src="./js/chat.js"></script>
+    <script src="./js/utilities.js"></script>
+    <!--SCRIPT DE PRUEBA - PRUEBA OK AR -->
+    <script src="/sitioweb/form-domicilios.js"></script>
+    <!--SCRIPT PARA AGREGAR EL DESCUENTO DE LOS CUPONES AR-->
+    <!--<script src="/sitioweb/cart-fixed.js"></script>-->
+
 </body>
 </html>
+    

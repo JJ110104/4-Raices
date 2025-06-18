@@ -1,162 +1,300 @@
-<!--Estructura basica del documento HTML-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4 Raicess|| Coffee shop</title>
-    <link rel="stylesheet" href="/sitio_web/css/style.css">
+    <title>Panadería y Pastelería - 4 Raices Coffee Shop</title>
+     <link rel="stylesheet" href="./css/common.css">
+      <link rel="stylesheet" href="./css/homepage.css">
+    <link rel="stylesheet" href="./css/base-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="body">
+<body>
 
-    <!--barra de inicio con datos y foto-->
+    <!-- CARRITO -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: $<span id="cartTotal">0</span></div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <button class="cart-float-btn" id="cartFloatBtn">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- CHAT -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h4>💬 Chat en Vivo</h4>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">¡Hola! Soy María, tu asistente virtual. ¿En qué puedo ayudarte hoy? ☕</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+
+    <button class="chat-float-btn" id="chatFloatBtn">💬</button>
+
+    <!-- CONTENIDO -->
     <header class="header">
-          <img src="/src/img/coffee-cup.png" alt="logo" class="logo">
-            <div>
-                <h2>4 RAICES COFFEE SHOP</h2>
-                <p>“Donde todo florece entre café y amistad.”</p>
-            </div>   
+        <img src="../src/img/coffee-cup.png" alt="logo" class="logo">
+        <div>
+            <h2>4 RAICES COFFEE SHOP</h2>
+            <p>"Donde todo florece entre café y amistad."</p>
+        </div>   
     </header>
 
-     <!--Encabezado: soy lo que estas buscando-->
     <div class="div">        
-        <h1>Representa a los cuatro fundadores: Paola, Jhon, Julián 
-            y Angie. Como raíces, cada uno aporta su energía para que 
-            el negocio florezca. </h1>
+        <h1>Panadería y pastelería artesanal, horneado fresco cada día con ingredientes de primera calidad</h1>
     </div>
 
-    <!--Barra de navegacion-->
-<nav class="navegacion">
-    <ul>
-        <!--Enlace a la misma pag del home-->
-        <li><a href="/sitio_web/index.html">INICIO</a></li>
-        <!--Enlace a la pagina portafolio ugc -->
-        <li><a href="/sitio_web/cafeteria.html" >CAFETERIA</a></li>
-        <!--Enlace a la pagina servicios-->
-        <li><a href="/sitio_web/panaderia-y-pasteleria.html" class="activo">PANADERIA Y PASTELERIA</a></li>      
-       <!--Enlace a la pagina de contacto-->
-        <li><a href="contacto.html">CONTACTO</a></li>
-         <!--Enlace a la pagina de contacto-->
-        <li><a href="pedido-online.html">DOMICILIOS</a></li>
-    </ul>
-</nav>
+     <!--NAVEGACIÓN COMÚN-->
+    <nav class="navegacion">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="dropdown">
+                <a href="cafeteria.html" class="dropdown-toggle" >
+                    CAFETERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="cafeteria.html#cafes-clasicos">Cafés Clásicos</a></li>
+                    <li><a href="cafeteria.html#cafes-especiales">Cafés Especiales</a></li>
+                    <li><a href="cafeteria.html#bebidas-gourmet">Bebidas Gourmet</a></li>
+                    <li><a href="cafeteria.html#bebidas-frescas">Bebidas Frescas</a></li>
+                    <li><a href="cafeteria.html#especiales-de-la-casa">Especiales de la casa</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="panaderia-y-pasteleria.html" class="dropdown-toggle" class="activo">
+                    PANADERIA Y PASTELERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="panaderia-y-pasteleria.html#panaderia">Panadería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#pasteleria">Pastelería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#galletas">Galletas y Dulces</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="contacto.html" >CONTACTO</a></li>
+            <li><a href="pedido-online.html">DOMICILIOS</a></li>
+            <li><a href="reservas.html">RESERVAS</a></li>
+        </ul>
+    </nav>
 
 
-<!--OPCIONES DEL MENU-->
-<section>
-<!-- Sección 1 menu-->
- <h6 class="categoria">PANADERIA</h6>
-  <div class="menu">
-    <div class="producto">
-      <img src="/src/img/baguette-artesanal.jpg" alt="BAGUETTE">
-      <div class="info">
-        <div class="nombre">Baguette artesanal</div>
-        <div class="descripcion">Pan crujiente por fuera y suave por dentro, hecho con masa madre y fermentación lenta.</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/pan.jpg" alt="pan">
-      <div class="info">
-        <div class="nombre">Pan de masa madre</div>
-        <div class="descripcion">o	Un pan de sabor profundo y textura esponjosa, elaborado con masa 
-            madre natural, perfecto para acompañar cualquier comida o disfrutar solo.</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/pan-ajo-queso.jpg" alt="pan ajo">
-      <div class="info">
-        <div class="nombre">Pan de ajo con queso</div>
-        <div class="descripcion">Pan suave relleno de ajo asado y queso derretido, 
-            ideal para acompañar ensaladas o platos principales..</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/pan-chocolate-belga.jpg" alt="pan chocolate">
-      <div class="info">
-        <div class="nombre">Pan de chocolate belga</div>
-        <div class="descripcion">Un pan suave relleno con trozos de chocolate belga, para los amantes del dulce en su pan.</div>
-      </div>
-    </div>
-  </div>
+    <section id="panaderia">
+        <div class="categoria">🥖 Panadería Artesanal</div>
+        <div class="menu">
+            <div class="producto">
+                <img src="../src/img/baguette-artesanal.jpg" alt=" Baguette artesanal">
+                <div class="info">
+                    <div class="nombre"> Baguette artesanal</div>
+                    <div class="descripcion">Pan crujiente por fuera y suave por dentro, elaborado con masa madre y fermentación lenta. Ideal para acompañar cualquier comida con un toque gourmet.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(189 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Baguette artesanal" data-price="4500" data-name=" Baguette artesanal" data-image=".../src/img/baguette-artesanal.jpg">
+                        Agregar al Carrito - $4.500
+                    </button>
+                </div>
+            </div>
 
-  <!-- Sección 2 -->
-  <h6 class="categoria">PASTELERIA</h6>
-  <div class="menu">
-    <div class="producto">
-      <img src="/src/img/cheesecake-frutos.jpg" alt="cheesecake">
-      <div class="info">
-        <div class="nombre">Cheesecake de frutos rojos</div>
-        <div class="descripcion">o	Suave y cremoso cheesecake sobre una base de galleta crujiente, 
-            cubierto con una mezcla de fresas, frambuesas y moras. Decorado con un coulis de frutos rojos.</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/tarta-frambuesa-pistacho.jpg" alt="tarta de frambuesa">
-      <div class="info">
-        <div class="nombre">Tarta de frambuesa y pistacho</div>
-        <div class="descripcion">o	Base de masa quebrada, crema pastelera de pistacho y 
-            frambuesas frescas, un postre elegante y delicado con un toque exótico.</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/tarta-limon-merengue.jpg" alt="tarta limon">
-      <div class="info">
-        <div class="nombre">Tarta de limón y merengue</div>
-        <div class="descripcion">Base de masa quebrada, rellena de una crema de limón 
-            fresca y ácida, coronada con un merengue dorado y esponjoso.</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/eclairs-chocolate-cafe.jpg" alt="eclairs">
-      <div class="info">
-        <div class="nombre">Eclairs de chocolate y café</div>
-        <div class="descripcion">Deliciosos eclairs rellenos con crema de café y 
-            cubiertos con una capa suave de chocolate oscuro, un clásico irresistible..</div>
-      </div>
-    </div>
-  </div>    
-  <!-- Sección 3 -->
-  <h6 class="categoria">GALLETAS Y OTROS DULCES</h6>
-  <div class="menu">
-    <div class="producto">
-      <img src="/src/img/galletas-avena-y-chocolate.jpeg" alt="galletas">
-      <div class="info">
-        <div class="nombre">Galletas de avena y chocolate</div>
-        <div class="descripcion">Galletas crujientes con trozos de avena y chocolate 
-            semiamargo, deliciosas para acompañar una taza de té o café</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/brownie.jpeg" alt="brownie">
-      <div class="info">
-        <div class="nombre">Brownies de chocolate intenso</div>
-        <div class="descripcion">Brownies súper fudgy, con un toque de nuez 
-            y un acabado de chocolate amargo que se derrite en la boca</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/tarta-manzana.jpeg" alt="tarta manzana">
-      <div class="info">
-        <div class="nombre">Tarta tantin de manzana</div>
-        <div class="descripcion">Manzanas caramelizadas, horneadas sobre una base de masa quebrada, 
-            servidas tibias con una bola de helado de vainilla.</div>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="/src/img/churros.jpeg" alt="churros">
-      <div class="info">
-        <div class="nombre">Churros gourmet con salsa de chocolate</div>
-        <div class="descripcion">o	Churros crujientes por fuera, suaves por dentro, 
-            acompañados de una espesa salsa de chocolate amargo para mojar.</div>
-      </div>
-    </div>
-  </div>    
-</section>
+            <div class="producto">
+                <img src="../src/img/pan.jpg" alt="Pan de masa madre">
+                <div class="info">
+                    <div class="nombre">Pan de masa madre</div>
+                    <div class="descripcion">Pan esponjoso y de sabor profundo, hecho con masa madre natural. Una opción saludable y versátil para disfrutar solo o con acompañamientos.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(134 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Pan de masa madre" data-price="6000" data-name="Pan de masa madre" data-image="../src/img/pan.jpg">
+                        Agregar al Carrito - $6.000
+                    </button>
+                </div>
+            </div>
+             <div class="producto">
+                <img src="../src/img/pan-ajo-queso.jpg" alt="Pan de ajo con queso">
+                <div class="info">
+                    <div class="nombre">Pan de ajo con queso</div>
+                    <div class="descripcion">Pan suave con ajo asado y queso derretido. Perfecto como entrada o para acompañar platos principales con un toque sabroso.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">(142 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Pan de masa madre" data-price="6000" data-name="Pan de ajo con queso" data-image="../src/img/pan-ajo-queso.jpg">
+                        Agregar al Carrito - $6.000
+                    </button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="../src/img/pan-chocolate-belga.jpg" alt=" Pan de chocolate belga">
+                <div class="info">
+                    <div class="nombre"> Pan de chocolate belga</div>
+                    <div class="descripcion">Pan dulce y suave relleno con trozos de auténtico chocolate belga. Una delicia irresistible para quienes aman el dulce en cada bocado</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(195 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Pan de chocolate belga" data-price="4500" data-name=" Pan de chocolate belga" data-image="../src/img/pan-chocolate-belga.jpg">
+                        Agregar al Carrito - $7.000
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!--PIE DE PAGINA: Todos los derechos reservados-->
+    <section id="pasteleria">
+        <div class="categoria">🍰 Pastelería Gourmet</div>
+        <div class="menu">
+            <div class="producto">
+                <img src="../src/img/cheesecake-frutos.jpg" alt="Cheesecake">
+                <div class="info">
+                    <div class="nombre">Cheesecake de Frutos Rojos</div>
+                    <div class="descripcion">Cremoso cheesecake sobre base de galleta crujiente, decorado con una mezcla fresca de frambuesas, fresas y moras. Un postre elegante y lleno de sabor.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(245 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="cheesecake" data-price="15000" data-name="Cheesecake de Frutos Rojos" data-image="../src/img/cheesecake-frutos.jpg">
+                        Agregar al Carrito - $15.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <img src="../src/img/tarta-frambuesa-pistacho.jpg" alt="Tarta de frambuesa y pistacho">
+                <div class="info">
+                    <div class="nombre">Tarta de frambuesa y pistacho</div>
+                    <div class="descripcion">Base de masa quebrada, con crema de pistacho y frambuesas frescas. Un postre delicado y exótico que conquista por su color y sabor.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(198 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Tarta de frambuesa y pistacho" data-price="14000" data-name="Tarta de frambuesa y pistacho" data-image="../src/img/tarta-frambuesa-pistacho.jpg">
+                        Agregar al Carrito - $14.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <img src="../src/img/tarta-limon-merengue.jpg" alt="Tarta de limón y merengue">
+                <div class="info">
+                    <div class="nombre">Tarta de limón y merengue</div>
+                    <div class="
+                        descripcion">Crujiente base de masa quebrada, con relleno de crema de limón fresca y un merengue dorado y esponjoso. Refrescante y tradicional.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(201 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Tarta de limón y merengue" data-price="8000" data-name="Tarta de limón y merengue" data-image="../src/img/tarta-limon-merengue.jpg">
+                        Agregar al Carrito - $8.000
+                    </button>
+                </div>
+            </div>
+             <div class="producto">
+                <img src="../src/img/eclairs-chocolate-cafe.jpg" alt=" Éclairs de chocolate y café">
+                <div class="info">
+                    <div class="nombre"> Éclairs de chocolate y café</div>
+                    <div class="
+                        descripcion">Clásicos éclairs rellenos de crema de café, cubiertos con suave chocolate oscuro. Una combinación refinada y deliciosa.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(210 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product=" Éclairs de chocolate y café" data-price="10000" data-name=" Éclairs de chocolate y café" data-image="../src/img/eclairs-chocolate-cafe.jpg">
+                        Agregar al Carrito - $10.000
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+<section id="galletas">
+        <div class="categoria">🍪 Galletas y Otros Dulces</div>
+        <div class="menu">
+            <div class="producto">
+                <img src="../src/img/galletas-avena-y-chocolate.jpeg" alt="Galletas de avena y chocolate">
+                <div class="info">
+                    <div class="nombre">Galletas de avena y chocolates</div>
+                    <div class="descripcion">Galletas crujientes con avena y trozos de chocolate semiamargo. Perfectas para acompañar tu café o té favorito.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(245 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Galletas de avena y chocolatee" data-price="15000" data-name="Galletas de avena y chocolate" data-image="../src/img/galletas-avena-y-chocolate.jpegg">
+                        Agregar al Carrito - $15.000
+                    </button>
+                </div>
+            </div>
+                <div class="producto">
+                <img src="../src/img/tarta-manzana.jpeg" alt="Tarta tatin de manzana">
+                <div class="info">
+                    <div class="nombre">Tarta tatin de manzana</div>
+                    <div class="descripcion">Manzanas caramelizadas sobre masa quebrada, servidas tibias con helado de vainilla. Un clásico francés reinventado con mucho cariño.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(199 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Tarta tatin de manzana" data-price="14000" data-name="Tarta tatin de manzana" data-image="../src/img/tarta-manzana.jpeg">
+                        Agregar al Carrito - $14.000
+                    </button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <img src="../src/img/brownie.jpeg" alt="Brownies de chocolate intenso">
+                <div class="info">
+                    <div class="nombre">Brownies de chocolate intenso</div>
+                    <div class="
+                        descripcion">Brownies estilo fudgy, con nuez y chocolate amargo derretido. Jugosos, densos y con el balance perfecto entre dulzura e intensidad.</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(201 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product="Brownies de chocolate intenso" data-price="8000" data-name="Brownies de chocolate intenso" data-image="../src/img/tarta-limon-merengue.jpg">
+                        Agregar al Carrito - $8.000
+                    </button>
+                </div>
+            </div>
+              <div class="producto">
+                <img src="../src/img/churros.jpeg" alt=" Churros gourmet con salsa de chocolate">
+                <div class="info">
+                    <div class="nombre"> Churros gourmet con salsa de chocolate</div>
+                    <div class="
+                        descripcion">Churros crujientes por fuera y tiernos por dentro, acompañados de salsa espesa de chocolate amargo. ¡Perfectos para mojar y disfrutar!</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(210 reseñas)</span>
+                    </div>
+                    <button class="add-to-cart" data-product=" Churros gourmet con salsa de chocolate" data-price="10000" data-name="Churros gourmet con salsa de chocolate" data-image="../src/img/eclairs-chocolate-cafe.jpg">
+                        Agregar al Carrito - $10.000
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="pie">
         <p>&copy; 2025 4 raices . Todos los derechos reservados</p>
+        <div class="social-links">
+             <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
-</body>
-
-</html>
+ <script src="./js/common.js"></script>
+    <script src="./js/main.js"></script>
+     <script src="./js/chat.js"></script>
+     <script src="./js/cart-fixed.js"></script>
+     <script src="./js/utilities.js"></script>

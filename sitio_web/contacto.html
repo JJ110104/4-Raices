@@ -1,94 +1,247 @@
-<!--Estructura basica del documento HTML-->
+<!--PÁGINA DE CONTACTO ACTUALIZADA-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4 Raicess|| Coffee shop</title>
+    <title>Pedidos Online - 4 Raices Coffee Shop</title>
+    <!-- Estilos comunes -->
+    <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/cart-fixed.css">
+    <link rel="stylesheet" href="./css/chat.css">
 </head>
 <body class="body">
 
-    <!--barra de inicio con datos y foto-->
+    <!-- CURSOR PERSONALIZADO -->
+    <div class="custom-cursor"></div>
+
+    <!-- SISTEMA DE CARRITO -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items del carrito se cargan aquí -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DEL CARRITO -->
+    <button class="cart-float-btn" id="cartFloatBtn">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- CHAT EN VIVO -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h4>💬 Chat en Vivo</h4>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">
+                ¡Hola! Soy María, tu asistente virtual. ¿En qué puedo ayudarte hoy? ☕
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DEL CHAT -->
+    <button class="chat-float-btn" id="chatFloatBtn">
+        💬
+    </button>
+
+    <!--ENCABEZADO COMÚN-->
     <header class="header">
           <img src="..//src/img/coffee-cup.png" alt="logo" class="logo">
             <div>
                 <h2>4 RAICES COFFEE SHOP</h2>
-                <p>“Donde todo florece entre café y amistad.”</p>
+                <p>"Donde todo florece entre café y amistad."</p>
             </div>   
     </header>
 
-     <!--Encabezado: soy lo que estas buscando-->
+    <!--BANNER-->
     <div class="div">        
-        <h1>Representa a los cuatro fundadores: Paola, Jhon, Julián 
-            y Angie. Como raíces, cada uno aporta su energía para que 
-            el negocio florezca.</h1>
+        <h1>Contáctanos y descubre como podemos hacer tu experiencia algo inolvidable</h1>
     </div>
 
-    <!--Barra de navegacion-->
-<nav class="navegacion">
-    <ul>
-        <!--Enlace a la misma pag del home-->
-        <li><a href="/sitio_web/index.html">INICIO</a></li>
-        <!--Enlace a la pagina portafolio ugc -->
-        <li><a href="/sitio_web/cafeteria.html">CAFETERIA</a></li>
-        <!--Enlace a la pagina servicios-->
-        <li><a href="panaderia-y-pasteleria.html">PANADERIA Y PASTELERIA</a></li>      
-       <!--Enlace a la pagina de contacto-->
-        <li><a href="/sitio_web/contacto.html" class="activo">CONTACTO</a></li>
-         <!--Enlace a la pagina de contacto-->
-        <li><a href="pedido-online.html">DOMICILIOS</a></li>
-    </ul>
-</nav>
-
-<!--ESPACIO PARA EL CODIGO DEL FORMULARIO*/-->
-    
-<!--SECCION DE UN FORMULARIO-->
-    <section class="seccion">
-        <h3>Formulario de contacto</h3>
-        <h4>¿Tienes alguna felicitación queja o reclamo? por favor diligencia los siguientes datos 
-            y nos pondremos en contacto contigo lo más pronto posible.</h4>
-        <form>
-            <label for="Nombre">Nombre</label>
-            <input type="text" id="Nombre">
-            <label for="email">Correo electronico</label>
-            <input type="email" id="email">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje"></textarea>
-           <!--<button type="submit" id="btnEnviar"></button>--> 
-           <input type="submit" value="Enviar">
-        </form>
+    <!--NAVEGACIÓN COMÚN-->
+    <nav class="navegacion">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="dropdown">
+                <a href="cafeteria.html" class="dropdown-toggle">
+                    CAFETERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="cafeteria.html#cafes-clasicos">Cafés Clásicos</a></li>
+                    <li><a href="cafeteria.html#cafes-especiales">Cafés Especiales</a></li>
+                    <li><a href="cafeteria.html#bebidas-gourmet">Bebidas Gourmet</a></li>
+                    <li><a href="cafeteria.html#bebidas-frescas">Bebidas Frescas</a></li>
+                    <li><a href="cafeteria.html#especiales-de-la-casa">Especiales de la casa</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="panaderia-y-pasteleria.html" class="dropdown-toggle">
+                    PANADERIA Y PASTELERIA <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="panaderia-y-pasteleria.html#panaderia">Panadería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#pasteleria">Pastelería</a></li>
+                    <li><a href="panaderia-y-pasteleria.html#galletas">Galletas y Dulces</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html" class="activo">CONTACTO</a></li>
+            <li><a href="pedido-online.html">DOMICILIOS</a></li>
+            <li><a href="reservas.html">RESERVAS</a></li>
+        </ul>
+    </nav>
+    <!-- INFORMACIÓN DE CONTACTO COMPLETA -->
+    <section class="contact-home-section">
+        <h2>📞 Información de Contacto</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Nuestra Ubicación</h3>
+                <p><span class="highlight">Cra 29 #50-20</span></p>
+                <p>Barrio Sotomayor</p>
+                <p>Bucaramanga, Santander</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Teléfonos</h3>
+                <p><span class="highlight">+57 (7) 123-4567</span></p>
+                <p>WhatsApp: <span class="highlight">+57 300 123 4567</span></p>
+                <p>Llamadas y mensajes</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Correos Electrónicos</h3>
+                <p><span class="highlight">info@4raicescoffee.com</span></p>
+                <p><span class="highlight">pedidos@4raicescoffee.com</span></p>
+                <p>Información y pedidos</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Redes Sociales</h3>
+                <p><span class="highlight">@4RaicesCoffee</span></p>
+                <p>Facebook, Instagram</p>
+                <p>Síguenos para ofertas</p>
+            </div>
+        </div>
     </section>
-<!--Sección ubicación-->
 
+    <!-- HORARIOS DE ATENCIÓN -->
+    <section class="hours-section">
+        <h3>🕒 Horarios de Atención</h3>
+        <div class="hours-grid">
+            <div class="hours-item today">
+                <div class="day">Lunes - Viernes</div>
+                <div class="time">7:00 AM - 9:00 PM</div>
+            </div>
+            <div class="hours-item">
+                <div class="day">Sábados</div>
+                <div class="time">8:00 AM - 10:00 PM</div>
+            </div>
+            <div class="hours-item">
+                <div class="day">Domingos</div>
+                <div class="time">9:00 AM - 8:00 PM</div>
+            </div>
+            <div class="hours-item">
+                <div class="day">Domicilios</div>
+                <div class="time">8:00 AM - 8:00 PM</div>
+            </div>
+        </div>
+    </section>
 
-<address>
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="seccion">
+        <div>
+            <h3>📝 Envíanos un Mensaje</h3>
+            <form id="contactForm">
+                <label for="nombre">Nombre Completo *</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Correo Electrónico *</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono">
+                
+                <label for="asunto">Asunto *</label>
+                <select id="asunto" name="asunto" required>
+                    <option value="">Selecciona un asunto</option>
+                    <option value="consulta">Consulta General</option>
+                    <option value="reserva">Reserva de Mesa</option>
+                    <option value="pedido">Pedido Especial</option>
+                    <option value="evento">Eventos y Catering</option>
+                    <option value="sugerencia">Sugerencias</option>
+                    <option value="queja">Quejas y Reclamos</option>
+                </select>
+                
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                
+                <input type="submit" value="Enviar Mensaje">
+            </form>
+        </div>
+    </section>
 
-    <!-- Mapa de dirección del sitio (es el lugar de estudio) -->
-    <div class="mapa-container">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31672.998416694758!2d-73.10618065!3d7.1115328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683fddbf6d281d%3A0x59525a22763194bf!2sCra%2029%20%2350-20%2C%20Sotomayor%2C%20Bucaramanga%2C%20Santander!5e0!3m2!1ses-419!2sco!4v1749423407514!5m2!1ses-419!2sco"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        width="200"
-        height="200"
-        style="border:0;">
-        </iframe>
-      
-      <p class="ubicacion">
-        Esta es nuestra sede principal en el corazón de la ciudad. Nos encontramos en la Cra 29 #50-20, Barrio Sotomayor.
-      </p>
-      <p class="ubicacion">
-        Nuestro horario de atención es de 9:00 am a 7:00 pm.
-      </p>
-    </div>
+    <!-- MAPA MEJORADO -->
+    <section class="map-home-section">
+        <h3>📍 Encuéntranos Fácilmente</h3>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.123456789!2d-73.123456!3d7.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDcnMjQuNCJOIDczwrAwNycyNC40Ilc!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="location-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <strong> Cra 29 #50-20, Barrio Sotomayor, Bucaramanga - ¡Te esperamos!</strong>
+        </div>
+    </section>
 
-</address>    
-    <!--PIE DE PAGINA: Todos los derechos reservados-->
+    <!--PIE DE PÁGINA COMÚN-->
     <footer class="pie">
         <p>&copy; 2025 4 raices . Todos los derechos reservados</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
+   
+<!-- SCRIPTS COMUNES PRIMERO -->
+    <script src="./js/common.js"></script>
+    <!-- SCRIPTS ESPECÍFICOS DE ESTA PÁGINA -->
+    <script src="./js/cart-fixed.js"></script>
+    <script src="./js/chat.js"></script>
+    <script src="./js/utilities.js"></script>
+    
 </body>
-
 </html>
