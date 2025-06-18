@@ -1,0 +1,57 @@
+/*=== VARIABLES Y RESET BASE ===*/
+:root {
+  --color-primary: #6f4e37;
+  --color-secondary: #ca9676;
+  --color-accent: #e7ba91;
+  --color-dark: #3d230b;
+  --color-light: #f8e4d7;
+  --color-brown-dark: #473428;
+  --color-brown-medium: #5c4033;
+  --color-brown-light: #b6886c;
+
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.2);
+
+  --transition-fast: 0.3s ease;
+  --transition-medium: 0.5s ease;
+  --transition-slow: 0.8s ease;
+
+  --border-radius: 20px;
+  --border-radius-small: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(/src/img/planta-real-cafe.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Arial", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--color-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  pointer-events: none;
+}
